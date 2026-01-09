@@ -6,19 +6,19 @@ import (
 )
 
 func encryptWord(word string) string {
-	if len(word) <= 1 {
-		return word
-	}
+    if len(word) <= 1 {
+        return word
+    }
 
-	first := word[0]
-	rest := word[1:]
-	reversed := ""
+    runes := []rune(word)
+    first := runes[0]
 
-	for i := len(rest) - 1; i >= 0; i-- {
-		reversed = reversed + string(rest[i])
-	}
+    reversed := ""
+    for i := len(runes) - 1; i >= 1; i-- {
+        reversed += string(runes[i])
+    }
 
-	return string(first) + reversed
+    return string(first) + reversed
 }
 
 func encryptPhrase(phrase string) string {
@@ -36,7 +36,7 @@ func encryptPhrase(phrase string) string {
 
 func main() {
 	phrases := []string{
-		"Pepe Schnele is a legend",
+		"Pepe Schnele is a legend але",
 		"Plaki plaki",
 		"Tun tun tun sahur",
 	}
